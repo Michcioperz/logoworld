@@ -1,0 +1,28 @@
+{% extends "logoworld/core.html" %}
+{% block head-insert %}
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css">
+  <script src="https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+{% endblock head-insert %}
+{% block body %}
+  <div id="map"></div>
+  <script>
+    L.mapbox.accessToken = 'pk.eyJ1IjoibWljaGNpb3BlcnoiLCJhIjoiY2lnNTVqZWtlMGF2bXYwbTY1YzFhcTA3cCJ9.yKjm9JgMdEXcOpQ03sQyuA';
+    L.mapbox.map('map', 'mapbox.streets-satellite');
+    if ("geolocation" in navigator) {
+      // fun stuff's gonna happen here
+    }
+  </script>
+{% endblock body %}
